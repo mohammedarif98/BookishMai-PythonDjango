@@ -1,0 +1,67 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/login1.css' %}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+
+<center>
+  <img src="{% static 'images/logo.jpg' %}" width="200px" height="150px" id="logo">
+    <a href="{% url 'home' %}" class="btn"><b>Home</b></a>
+    <a href="{% url 'login' %}" class="btn" onclick="alert('Please Login!');"><b>Books</b></a>
+    <a href="{% url 'login' %}" class="btn" onclick="alert('Please Login!');"><b>E-Books</b></a>
+    <a href="{% url 'aboutus' %}" class="btn"><b>About Us</b></a>
+    <a href="{% url 'contact' %}" class="btn"><b>Contact Us</b></a>
+</center>
+
+<div class="wrapper">
+  <div class="container">
+    <div class="col-left">
+      <div class="login-text">
+        <p id=bookishmai>
+         Bookish_Mai
+        </p>
+        <h3>Hello Friend</h3>
+                <p class="overlay__desc">Enter your personal details and start journey with us</p>
+                <a href="{% url 'register' %}"><button type="button" id="go-register" class="btn--main-outline">Sign Up</button></a>
+      </div>
+    </div>
+    <div class="col-right">
+      <div class="login-form">
+        <h2 id="log"><b>LOGIN</b></h2>
+        <form method="POST" enctype="multipart/form-data">
+          <p>
+            {% csrf_token %}
+            {{form.as_p}}
+          </p><center>
+          <script src='https://www.google.com/recaptcha/api.js'></script>
+          <div class="g-recaptcha" data-sitekey="6LfaZ4kdAAAAAD6tIMXgwBZF-sG0uIA_Bb6ypB1e"></div></center><br>
+          <p>
+            <input class="loginbtn" type="submit" value="Sign In" />
+          </p>
+          <p>
+            <a href="{% url 'password_reset' %}">Forgot password?</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<center><h5 id="or"><b>OR</b></h5></center>
+<p id="loginwith">Login with <a href="{% url 'social:begin' 'github' %}" id="github">GitHub<i class="fab fa-github"></i></a></p><br>
+
+</body>
+</html>

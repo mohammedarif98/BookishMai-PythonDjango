@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Secure Shopping</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/secureshopping.css' %}">
+	<link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+
+	<div class="container">
+
+<center>
+	<img src="{% static 'images/logo.jpg' %}" width="200px" height="150px" id="logo">
+<h4>SAFE & SECURE SHOPPING</h4>
+</center>
+
+
+<b>Is it safe to use my Credit/Debit card on Bookish_Mai Online store?</b>
+<p>Yes, shopping at Bookish_Mai Online store is 100% safe. All Credit card and Debit card payments on Bookish_Mai Online store are processed through secure and trusted payment gateways managed by leading Indian banks. Bookish_Mai Online store uses latest 256-bit encryption technology to protect your card information while securely transmitting it to the Banks for processing the payment.</p>
+
+<p>Furthermore, the Banks ask you to enter an online password (also known as 3D Secure password) which acts as an additional layer of security for your card transaction. This 3D Secure password is not printed anywhere on the card and is known only to you, giving you the added assurance that only you can use your card to make purchases on the Internet. This makes your online transaction on Bookish_Mai Online store extremely safe and secure.</p>
+
+<p>You can be assured that Bookish_Mai Online store offers you the highest standards of security currently available on the internet so as to ensure that your shopping experience is private, safe and secure.</p>
+
+<b>Does Bookish_Mai Online shop store my Credit/Debit card information?</b>
+<p>Bookish_Mai Online store stores the first 6 and last 4 digits of your card number in a secure and encrypted manner. The first 6 digits (also known as the Bank Identification Number) are used to identify the bank name and country where your card was issued. The first 6 and last 4 digits are together used for fraud detection and prevention purposes.</p>
+
+<b id="payment"><u>Payment Options</u></b><br>
+<b>Which Credit cards are supported on Bookish_Mai Online store?</b>
+<p>We accept all MasterCard, Visa and American Express Credit cards.</p>
+
+<b>Do you accept international credit cards on Bookish_Mai Online store?</b>
+<p>No, we do not accept international credit cards on Bookish_Mai Online store at this stage.</p>
+
+<b>What other payment options are available on Bookish_Mai Online store?</b>
+<p>Apart from Credit and Debit Cards, we accept payments by Internet Banking (covering 44 banks), Equated Monthly Installments (EMI)*, DD/Cheque and MO.</p>
+<p>Return to <a href="{% url 'home' %}"><i class="fas fa-home"></i>Home</a> Page</p>
+
+</div>
+
+</body>
+</html>

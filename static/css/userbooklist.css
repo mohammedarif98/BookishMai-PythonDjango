@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,600');
+
+
+* {
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .2s;
+  -moz-transition-timing-function: cubic-bezier(100,50,21,6);
+	-moz-transition-property: all;
+  -moz-transition-timing-function: cubic-bezier(100,50,21,6);
+}
+
+body{
+  background:black;
+  padding:75px;
+  text-align:center;
+  /*font-family: 'Montserrat', sans-serif;*/
+  font-family: 'Encode Sans Condensed', sans-serif;
+}
+
+th{
+  color: #ff7433;
+}
+
+td{
+  color: #999999;
+}
+
+.btn{
+  color:#999999;
+  padding:10px 20px;
+  font-size:13px;
+  text-decoration:none;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.btn:hover{
+  border-bottom: 1px solid #ff7433;
+  color:#ff7433;
+}
+
+#books{
+  width: 5cm;
+  height: 6cm;
+  border: 1px solid #999999;
+}
+
+.part-2{
+  color: white;
+}
+
+.container{
+  padding-top: 10px;
+}
+
+.optionbar{
+  padding-top: 50px;
+}
+
+#row1{
+  padding: 25px;
+  border-top: solid 1px #ff7433;
+  border-bottom: solid 1px #ff7433;
+  color: #999999;
+}
+
+h4{
+  color: #ff7433;
+}
+
+.bottomgrid{
+  color: #999999;
+}
+
+.follow{
+  color: white;
+}
+
+h2{
+  color: #ff7433;
+}
+
+.product-title{
+  padding-top: 5px;
+}
+
+#details{
+  color: white;
+  text-decoration: none;
+}
+
+.bookspadding{
+  padding-top: 50px;
+}
+
+.btncart{
+  background: #ff7433;
+  color: black;
+  border: none;
+}
+
+.btncart:hover{
+  background: none;
+  color: white;
+  border: 1px solid #ff7433;
+  text-decoration: none;
+}
+
+#mycart{
+  background-color: #ff7433;
+  border: none;
+}
+
+#mycartlink{
+  text-decoration: none;
+  color: black;
+}
+
+sup{
+  padding-left: 1px;
+}
+

@@ -1,0 +1,58 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,600');
+
+
+* {
+  -webkit-transition-property: all;
+  -webkit-transition-duration: .2s;
+  -moz-transition-timing-function: cubic-bezier(100,50,21,6);
+  -moz-transition-property: all;
+  -moz-transition-timing-function: cubic-bezier(100,50,21,6);
+}
+
+body{
+  background:black;
+  padding:75px;
+  text-align:center;
+  /*font-family: 'Montserrat', sans-serif;*/
+  font-family: 'Encode Sans Condensed', sans-serif;
+}
+
+
+.btn{
+  color:#999999;
+  padding:10px 20px;
+  font-size:13px;
+  text-decoration:none;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.btn:hover{
+  border-bottom: 1px solid #ff7433;
+  color:#ff7433;
+}
+
+#signup{
+  color: black;
+}
+
+#signup:hover{
+  border-bottom: 3px solid #ff7433;
+}
+
+.container{
+  /*background: white;*/
+  width: 80%;
+  text-align: left;
+}
+
+form{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+p{
+  color: black;
+}

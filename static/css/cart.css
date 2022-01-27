@@ -1,0 +1,57 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,600');
+
+
+* {
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .2s;
+  -moz-transition-timing-function: cubic-bezier(100,50,21,6);
+	-moz-transition-property: all;
+  -moz-transition-timing-function: cubic-bezier(100,50,21,6);
+}
+
+body{
+  background:black;
+  padding:75px;
+  text-align:center;
+  /*font-family: 'Montserrat', sans-serif;*/
+  font-family: 'Encode Sans Condensed', sans-serif;
+}
+
+h3{
+	color: #999999;
+	letter-spacing: 2px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+}
+
+table{
+	color: white;
+}
+
+th{
+	color: #ff7433;
+}
+
+td{
+	color: #999999;
+}
+
+h2{
+	color: #999999;
+}
+
+#tbl{
+	width: 80%;
+}
+
+#remove{
+	text-decoration: none;
+}
+
+#buynow{
+	text-decoration: none;
+}
+

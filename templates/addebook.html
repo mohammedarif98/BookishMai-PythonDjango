@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add eBooks</title>
+</head>
+<body>
+	<a href="{% url 'adminlistebook' %}">Back</a>
+	<!-- <form method="post" enctype="multipart/form-data"></form> for images and files -->
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{form.as_p}}
+		<button>Submit</button>
+	</form>
+		
+</body>
+</html>

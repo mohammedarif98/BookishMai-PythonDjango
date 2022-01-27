@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Books</title>
+</head>
+<body>
+	<a href="{% url 'listbook' %}">Back</a>
+	<!-- <form method="post" enctype="multipart/form-data"></form> for images and files -->
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{form.as_p}}
+		<button>Submit</button>
+	</form>
+		
+</body>
+</html>

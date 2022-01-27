@@ -1,0 +1,43 @@
+from django.urls import path, re_path
+from . import views
+from master.views import *
+# from master.views import HomeView, UserLogin, BooksView, eBooksView, BooksList, BookDetailsView, eBooksList, BookEditView
+
+urlpatterns = [
+	path('', HomeView.as_view(),name="home"),
+	path('user/home/', UserView.as_view(),name="userhome"),
+	path('dashbord/', AdminView.as_view(),name="adminhome"),
+    path('register/', views.adduser, name='register'),
+    path('login/', UserLogin.as_view(),name="login"),
+    path('add/book/', BooksView.as_view(), name='addbook'),
+    path('add/ebook/', eBooksView.as_view(), name='addebook'),
+	path('user/list/ebooks/', UsereBooksList.as_view(), name='userlistebook'),
+	path('list/books/', BooksList.as_view(), name='listbook'),
+	re_path(r'^details/(?P<pk>\d+)/$', BookDetailsView.as_view(), name='bookdetails'),
+	re_path(r'^edit/(?P<pk>\d+)/$', BookEditView.as_view(), name='bookedit'),
+	re_path(r'^edit/ebook/(?P<pk>\d+)/$', eBookEditView.as_view(), name='ebookedit'),
+	path("logout", views.logout_request, name="logout"),
+	path('about/', AboutUsView.as_view(),name="aboutus"),
+	path('user/about/', UserAboutUsView.as_view(),name="useraboutus"),
+	path('secureshopping/', SecureShoppingView.as_view(),name="secureshopping"),
+	path('user/secureshopping/', UserSecureShoppingView.as_view(),name="usersecureshopping"),
+	path('privacy/', PrivacyView.as_view(),name="privacy"),
+	path('user/privacy/', UserPrivacyView.as_view(),name="userprivacy"),
+	path('payment/', PaymentShowView.as_view(),name="payment"),
+	path('user/payment/', UserPaymentView.as_view(),name="userpayment"),
+	path('contact/', ContactView.as_view(),name="contact"),
+	path('user/contact/', UserContactView.as_view(),name="usercontact"),
+	path('user/list/books/', UserBooksList.as_view(), name='userlistbook'),
+	path('list/ebooks/', AdmineBooksList.as_view(), name='adminlistebook'),
+	re_path(r'^cart/(?P<pk>\d+)/$', AddCartView.as_view(), name='cart'),
+	path('user/cart/list/', ListCartView.as_view(),name="usercartlist"),
+	re_path(r'^cart/remove/(?P<pk>\d+)/$', CartRemoveView.as_view(), name='removeprod'),
+	re_path(r'^book/remove/(?P<pk>\d+)/$', BookRemoveView.as_view(), name='removebook'),
+	path('order/history/', OrderHistoryView.as_view(),name="orderhistory"),
+	path('orders/', OrderList.as_view(),name="orders"),
+	re_path(r'^userdetails/(?P<pk>\d+)/$', UserDetailsView.as_view(), name='userdetails'),
+	#path('mail/', views.subscribe, name = 'subscribe'),
+	path("password_reset/", views.password_reset_request, name="password_reset"),
+	path('paymenthandler/', views.paymenthandler, name='paymenthandler'),
+	path('pay/', PaymentView.as_view(), name='pay'),
+]

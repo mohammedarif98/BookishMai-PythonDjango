@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+	<link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+<div id="header">
+<center>
+<img src="{% static 'images/logo.jpg' %}" width="200px" height="150px" id="logo">
+<h4>ABOUT US</h4></center>
+</div>
+	<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      
+      <p>Bookish_Mai started in 2021 by Suhaim Shibili P T [popularly known as Bookish_Mai, doyen of publishing in India] is considered as one of the top five prestigious literary publishing houses in India. It is ISO certified book industry in India. Bookish_Mai is considered to have the highest pool of intellectual property /content suited for the Indian market. Strong editorial team ensures experiments with new formations, new areas, and encourages budding writers. Translation program of Bookish_Mai is the largest in India. 90% of the authors of the region publish their works through Bookish_Mai. Bookish_Mai publishes about 1500 books a year, making it one of the largest literary publishers of India. Bookish_Mai corporate office is in Ernakulam, Kerala, the publishing hub of South India. Bookish_Mai publishes books in all genres. English English Malayalam Dictionary published by Bookish_Mai is the largest selling bilingual dictionary in India and the second largest selling dictionary of India.</p>
+
+	  <p>Bookish_Mai conducts Bookish_Mai International Book Fair, one of the largest international book fairs in the region with participation from over 300 publishers of the world. This is an annual event conducted in two of the major cities of South India as a 12 day Book Fair as well as a Literary Festival. International authors and well known authors of India attend these events and it is a part of the festival calendar of the respective cities. The exhibition so far has attracted more than 2 million visitors.</p>
+
+    </div>
+    <div class="col-sm-6">
+      <p><b>Bookish_Mai Media,</b> the magazine publishing wing of Bookish_Mai publishes Education Insider, a Pan Asian B2B Magazine for the education sector, News’n’ More, a current affairs and GK focused magazine for students, Emerging Kerala, a magazine which focuses on the socio-economic development of Kerala and Pachakuthira, a magazine which intervene in the socio-political space.</p>
+
+	  <p><b>Current Books,</b> Retail formats include destination stores, tourist bookshops, and academic books in small, medium and large sizes. Many innovative marketing and promotional methods successfully implemented by Current Books has inculcated reading habits among the public. Current Books is present in every nook and corner of Kerala, the 100% literate state of India.</p>
+
+    <p>Return to <a href="{% url 'home' %}"><i class="fas fa-home"></i>Home</a> Page</p>
+    
+    </div>
+</div>
+</div>
+</body>
+</html>

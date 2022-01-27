@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book Details</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bookdetails.css' %}">
+</head>
+<body>
+
+<center>
+	<img src="{% static 'images/logo.jpg' %}" width="200px" height="150px" id="logo">
+    <a href="{% url 'userhome' %}" class="btn"><b>Home</b></a>
+    <a href="{% url 'userlistbook' %}" class="btn"><b>Books</b></a>
+    <a href="{% url 'userlistebook' %}" class="btn"><b>E-Books</b></a>
+    <a href="{% url 'useraboutus' %}" class="btn"><b>About Us</b></a>
+    <a href="{% url 'usercontact' %}" class="btn"><b>Contact Us</b></a>
+</center>
+
+
+	<table class="table table-striped">
+		<tr>
+		<!-- <th>Book</th> -->
+		<td><img src="{{object.Image.url}}" height="200px" width="150px"></td>
+		</tr>
+		<tr>
+			<!-- <th>Book Name</th> -->
+			<td>{{object.Book_Name}}</td>
+		</tr>
+		<tr>
+			<!-- <th>Author</th> -->
+			<td>{{object.Author}}</td>
+		</tr>
+		<tr>
+			<!-- <th>Price</th> -->
+			<td>{{object.Price}}</td>
+			
+		</tr>
+		<tr>
+			<!-- <th>Language</th> -->
+			<td>{{object.Language}}</td>
+		</tr>
+	</table>
+	
+</body>
+</html>

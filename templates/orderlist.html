@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Order History</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/orderhistory.css' %}">
+	<link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+
+<a href="{% url 'adminhome' %}" class="float-right"><i class="fas fa-home"></i></a>
+
+	<center>
+	<img src="{% static 'images/logo.jpg' %}" width="200px" height="150px" id="logo">
+	</center>
+
+<center>
+<h3><b>Orders</b></h3>
+
+<table class="table .table-striped" id="tbl">
+
+	<tr>			
+		<th>User ID</th>
+		<th>Book Name</th>
+		<th>Date</th>		
+		<th>Price</th>
+	</tr>
+
+	{% for i in user_order %}
+
+	<tr>				
+		<td><a href="{% url 'userdetails' i.user %}">{{i.user}}</a></td>
+		<td>{{i.Book_Name}}</td>
+		<td>{{i.created_on}}</td>		
+		<td>₹ {{i.Price}}</td>
+	</tr>
+
+	{% endfor %}
+
+</table>
+</center>
+
+</body>
+</html>

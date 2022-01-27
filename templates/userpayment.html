@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Payment Option</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/payment.css' %}">
+	<link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+
+<center>
+    
+  <img src="{% static 'images/logo.jpg' %}" width="200px" height="150px" id="logo">
+
+
+<h4>PAYMENT OPTIONS</h4>
+</center>
+<p>Bookish_Mai accepts Visa, Master & Diners Card along with Net banking of All Major Banks like SBI and other State Banks group, Axis Bank, Citi Bank, HDFC Bank, Central Bank,Corporation Bank,Federal Bank,Indian Bank,ING Vysya Bank,Karnataka Bank,Kotak Bank,Oriental Bank of Commerce,Yes Bank and J&K Bank.</p>
+
+<p>We also accepts payments through Itz Cash Card and a wide range of debit cards.</p>
+
+<p>Return to <a href="{% url 'userhome' %}"><i class="fas fa-home"></i>Home</a> Page</p>
+</div>
+</body>
+</html>

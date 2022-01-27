@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Books</title>
+	 <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/userbooklist.css' %}">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+
+<button class="float-right" id="mycart"><a href="{% url 'usercartlist' %}" id="mycartlink">Mycart<i class="fas fa-shopping-cart"></i><sup> {{cart_count}}</sup></a> </button>
+	
+<center>
+	<img src="{% static 'images/logo.jpg' %}" width="200px" height="150px" id="logo">
+    <a href="{% url 'userhome' %}" class="btn"><b>Home</b></a>
+    <a href="{% url 'userlistbook' %}" class="btn"><b>Books</b></a>
+    <a href="{% url 'userlistebook' %}" class="btn"><b>E-Books</b></a>
+    <a href="{% url 'useraboutus' %}" class="btn"><b>About Us</b></a>
+    <a href="{% url 'usercontact' %}" class="btn"><b>Contact Us</b></a>
+</center>
+
+<section class="section-products">
+	<div class="container">
+		<div class="row justify-content-center text-center">
+			<div class="col-md-8 col-lg-6"></div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<!-- Single Product -->
+					{% for i in userbooks %}
+					<div class="col-md-6 col-lg-4 col-xl-3 bookspadding">							
+            <div id="product-1" class="single-product">
+							<a href="{% url 'bookdetails' i.id %}" id="details">
+								<img class="pro" src="{{i.Image.url}}" id="books">	  
+									<div class="part-2"> 
+										<h6 class="product-title">{{i.Book_Name}}</h6>
+										<h6 class="author">{{i.Author}}</h6>
+										<h6 class="price">₹ {{i.Price}}</h6> </a>
+										<div class="addcart">
+										<a class="btncart" href="{% url 'cart' i.id %}">&nbsp Add to Cart<i class="fas fa-cart-plus"></i> &nbsp</a>
+										</div>
+									</div>
+						</div>
+					</div>
+					{% endfor %}
+						<!-- Single Product -->
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="container optionbar">
+  <div class="row" id="row1">
+    <div class="col-sm-4">
+      <h4>ABOUT US</h4>
+      <p>Bookish_Mai started in 2021 by Suhaim Shibili P T [popularly known as Bookish_Mai, doyen of publishing in India] is considered as one of the top five prestigious literary publishing houses in India.</p>
+      <p>It is ISO certified book industry in India.<a href="{% url 'useraboutus' %}">Read more</a>...</p>
+    </div>
+    <div class="col-sm-4">
+      <h4>SHOP WITH CONFIDENCE</h4>
+      <a href="{% url 'usersecureshopping' %}" class="bottomgrid">Secure Shopping</a><br>
+      <a href="{% url 'userprivacy' %}" class="bottomgrid">Privacy Policy</a><br>
+      <a href="{% url 'userpayment' %}" class="bottomgrid">Payment Option</a><br><br>
+      <h4>FOLLOW US</h4>
+      <a href="#" class="follow"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="follow"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="follow"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="follow"><i class="fab fa-google"></i></a>
+    </div>
+    <div class="col-sm-4">
+      <h4>LINKS</h4>
+      <a href="{% url 'userlistbook' %}" class="bottomgrid">Books</a><br> 
+      <a href="{% url 'userlistebook' %}" class="bottomgrid">E-Books</a><br>        
+      <a href="{% url 'usercontact' %}" class="bottomgrid">Contact Us</a><br>
+      
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

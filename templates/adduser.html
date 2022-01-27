@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/registration.css' %}">
+</head>
+<body>
+
+<center>
+  <img src="{% static 'images/logo.jpg' %}" width="200px" height="150px" id="logo">
+    <a href="{% url 'home' %}" class="btn"><b>Home</b></a>
+    <a href="{% url 'register' %}" class="btn" onclick="alert('Please Login!');"><b>Books</b></a>
+    <a href="{% url 'register' %}" class="btn" onclick="alert('Please Login!');"><b>E-Books</b></a>
+    <a href="{% url 'aboutus' %}" class="btn"><b>About Us</b></a>
+    <a href="{% url 'contact' %}" class="btn"><b>Contact Us</b></a>
+</center>
+
+<!-- <div class="container">
+	<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    {{extend_form.as_p}}
+    <button class="btn btn-success" id="signup">Sign Up</button>
+  </form>
+</div> -->
+
+<div class="container" 
+     style="background-image:url({% static 'images/123.jpg' %});
+     background-size: cover; 
+     background-repeat: no-repeat;
+     background-position: center; ">
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p><b>Username :</b> {{form.username}} </p> 
+    <p><b>First Name :</b> {{form.first_name}} </p> 
+    <p><b>Last Name :</b> {{form.last_name}} </p> 
+    <p><b>Password :</b> {{form.password1}} </p>
+    <ul>
+      <li>Your password can’t be too similar to your other personal information.</li>
+      <li>Your password must contain at least 8 characters.</li>
+      <li>Your password can’t be a commonly used password.</li>
+      <li>Your password can’t be entirely numeric.</li>
+    </ul>  
+    <p><b>Confirm Password :</b> {{form.password2}} </p> 
+    <p><b>e-mail :</b> {{form.email}} </p>
+    <p><b>Age :</b> {{extend_form.age}} </p>
+    <p><b>Address :</b> {{extend_form.address}} </p>
+    <p><b>Mobile No :</b> {{extend_form.mob_no}} </p>
+    <center>
+    <button class="btn btn-success" id="signup">Sign Up</button>
+  </center>
+  </form>
+</div>
+
+</body>
+</html>
+   

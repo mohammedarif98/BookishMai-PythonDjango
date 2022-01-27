@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Books</title>
+	 <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/booklist.css' %}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+	
+<center>
+	<img src="{% static 'images/logo.jpg' %}" width="200px" height="150px" id="logo">
+    <a href="{% url 'adminhome' %}" class="btn"><b>Home</b></a>
+    <a href="{% url 'addbook' %}" class="btn"><i class="fas fa-plus"></i><b> Add Book</b></a>
+</center>
+
+	<table class="table table-striped">
+		<tr>
+			<th>Book</th>
+			<th>Book Name</th>
+			<th>Author</th>
+			<th>Price</th>
+			<th>Qty</th>
+			<th>Language</th>
+			<th></th>
+			<th></th>
+		</tr>
+		{% for i in books %}
+		<tr>
+			<td><a href="{% url 'bookdetails' i.id %}"><img src="{{i.Image.url}}" height="200px" width="150px"></a></td>
+			<td>{{i.Book_Name}}</td>
+			<td>{{i.Author}}</td>
+			<td>{{i.Price}}</td>
+			<td>{{i.Quantity}}</td>
+			<td>{{i.Language}}</td>
+			<td><a href="{% url 'bookedit' i.id %}">Edit</a></td>
+			<td><a href="{% url 'removebook' i.id %}">Remove</a></td>
+
+		</tr>
+		{% endfor %}
+	</table>
+
+<div class="text-center">
+  {% if is_paginated %}
+  <ul class="pagination">
+    {% if page_obj.has_previous %}
+      <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in paginator.page_range %}
+      {% if page_obj.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+      <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+</div>
+
+</body>
+</html>
